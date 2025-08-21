@@ -22,6 +22,6 @@ public class ParGenero implements Serializable {
     private String ds_genero;
 
     @Column(name="sg_genero", nullable = false)
-    private Boolean sg_genero;
+    private String sg_genero;
 
 }

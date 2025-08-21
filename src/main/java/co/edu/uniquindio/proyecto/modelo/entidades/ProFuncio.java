@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class ProFuncio implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "id_funcio", nullable = false)
     private Integer id_funcio;
 
     @ManyToOne
@@ -25,10 +25,6 @@ public class ProFuncio implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_genero", nullable = false)
     private ParGenero genero;
-
-    @ManyToOne
-    @JoinColumn(name = "id_paises", nullable = false)
-    private ParPaises id_paises;
 
     @Column(name="nm_funci1", nullable = false, length = 25)
     private String nm_funci1;
@@ -42,8 +38,18 @@ public class ProFuncio implements Serializable {
     @Column(name="ap_funci2", length = 25)
     private String ap_funci2;
 
-    @Column(name="no_funcio", length = 50)
-    private Integer no_funcio;
+    @ManyToOne
+    @JoinColumn(name = "id_paises", nullable = false)
+    private ParPaises id_paises;
+
+    @Column(name = "id_depart", nullable = false)
+    private Integer id_depart;
+
+    @Column(name = "id_munici", nullable = false)
+    private Integer id_munici;
+
+    @Column(name="no_funcio", length = 10)
+    private String no_funcio;
 
     @Column(name="ce_funcio", nullable = false, length = 100)
     private String ce_funcio;
