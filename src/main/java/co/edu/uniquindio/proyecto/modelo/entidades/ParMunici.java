@@ -18,7 +18,7 @@ public class ParMunici implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_munici;
 
-    @Column(name="nm_munici", nullable = false, length = 25)
+    @Column(name="nm_munici", nullable = false, length = 100)
     private String nm_munici;
 
     @ManyToOne

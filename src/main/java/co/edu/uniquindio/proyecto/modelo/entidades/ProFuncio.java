@@ -15,7 +15,8 @@ import java.io.Serializable;
 public class ProFuncio implements Serializable {
 
     @Id
-    @JoinColumn(name = "id_funcio", nullable = false)
+    @Column(name = "id_funcio", nullable = false)
+    @EqualsAndHashCode.Include
     private Integer id_funcio;
 
     @ManyToOne
@@ -40,13 +41,15 @@ public class ProFuncio implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_paises", nullable = false)
-    private ParPaises id_paises;
+    private ParPaises id_paises; // Cambiado de 'pais' a 'id_paises'
 
-    @Column(name = "id_depart", nullable = false)
-    private Integer id_depart;
+    @ManyToOne
+    @JoinColumn(name = "id_depart", nullable = false)
+    private ParDepart id_depart; // Cambiado de 'departamento' a 'id_depart'
 
-    @Column(name = "id_munici", nullable = false)
-    private Integer id_munici;
+    @ManyToOne
+    @JoinColumn(name = "id_munici", nullable = false)
+    private ParMunici id_munici; // Cambiado de 'municipio' a 'id_munici'
 
     @Column(name="no_funcio", length = 10)
     private String no_funcio;

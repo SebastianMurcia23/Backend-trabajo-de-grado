@@ -25,7 +25,7 @@ public class ParDescar implements Serializable {
     private Integer gr_descar;
 
     @Column(name="ds_descar", nullable = false, length = 50)
-    private Integer ds_descar;
+    private String ds_descar;
 
     @ManyToOne
     @JoinColumn(name = "id_nivcar", nullable = false)

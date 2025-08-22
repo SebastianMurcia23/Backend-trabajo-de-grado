@@ -18,7 +18,7 @@ public class ParNivcar implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_nivcar;
 
-    @Column(name="ds_nivcar", nullable = false, length = 25)
+    @Column(name="ds_nivcar", nullable = false, length = 50)
     private String ds_nivcar;
 
     @Column(name="est_nivcar", nullable = false)
